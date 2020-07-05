@@ -21,6 +21,10 @@ library(gapminder)
 
 Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 
+This is a summarizing the data to be clean.
+
+ahahaha
+
 # Life Expectency Analysis
 ```{r}
 data("gapminder_unfiltered")
@@ -32,6 +36,19 @@ gapminder_unfiltered %>%
   arrange(year) ->
   sumdat
 ```
+
+```{r}
+sumdat %>%
+  ggplot(aes(x=year,y=lifeExp))+
+  geom_point(aes(color=country))+
+  geom_point(pch=1)+
+  theme_bw()+
+  geom_smooth(method = "lm",se=FALSE)+
+  xlab("Year")+
+  ylab("Maximum Life Expectancy")+
+  scale_color_discrete(name="Country")
+```
+
 
 
 
