@@ -1,0 +1,52 @@
+---
+title: "Examine Life Expectancy"
+author: "Meiting Dong"
+date: "`r Sys.Date()`"
+output: pdf_document
+urlcolor: "blue"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, message=FALSE}
+library(magrittr)
+library(tidyverse)
+library(gapminder)
+```
+
+# Abstract
+
+Here, I re-examine the analysis of Oeppen and Vaupel (2002).
+
+# Life Expectency Analysis
+```{r}
+data("gapminder_unfiltered")
+gapminder_unfiltered %>%
+  group_by(year) %>%
+  filter(lifeExp==max(lifeExp)) %>%
+  ungroup() %>%
+  select(year,country,lifeExp) %>%
+  arrange(year) ->
+  sumdat
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
